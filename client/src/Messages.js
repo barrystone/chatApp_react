@@ -1,7 +1,7 @@
 import React, { useEffect } from "react";
 import { useQuery, gql } from "@apollo/client";
 import Identicon from "react-identicons";
-import { Grid, Button } from "@material-ui/core";
+import { Grid } from "@material-ui/core";
 
 import InputBox from "./inputBox";
 
@@ -48,7 +48,12 @@ const Messages = ({ user, outChat }) => {
                         <div className="userName">{messageUser}</div>
                       </Grid>
                       <Grid item>
-                        <div className="chatBox">
+                        <div
+                          className="chatBox"
+                          style={{
+                            maxWidth: screen.width * 0.7,
+                          }}
+                        >
                           <p>{content}</p>
                         </div>
                       </Grid>

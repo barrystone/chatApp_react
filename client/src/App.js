@@ -6,7 +6,6 @@ import ReactDOM from "react-dom";
 
 import "./index.css";
 
-import Chat from "./Chat";
 import LandingPage from "./LandingPage";
 
 const App = () => <LandingPage />;
