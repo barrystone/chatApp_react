@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { Grid, Button, TextField } from "@material-ui/core";
 
-import Chat from "./Chat";
+import Chat from "../components/Chat";
 
 const LandingPage = () => {
   const [user, setUser] = useState(localStorage.getItem("chatApp_react_user"));

@@ -1,7 +1,6 @@
 import React, { useState } from "react";
 import { Grid, Input, Button } from "@material-ui/core";
 import { gql, useMutation } from "@apollo/client";
-// import Icon from "@material-ui/core/Icon";
 
 const POST_MESSAGES = gql`
   mutation($user: String!, $content: String!) {
@@ -14,7 +13,6 @@ const inputBox = ({ user, outChat }) => {
   const [postMessage] = useMutation(POST_MESSAGES);
 
   const onSend = () => {
-    console.log(textValue);
     if (textValue === "") {
       alert("Input is empty!");
     } else {
@@ -26,9 +24,8 @@ const inputBox = ({ user, outChat }) => {
   return (
     <div className="inputBox">
       <Grid container direction="row">
-        <Grid item xs={0.5}>
+        <Grid item xs={0}>
           <Button
-            // className="inputButton"
             className="outButton"
             variant="outlined"
             color="secondary"

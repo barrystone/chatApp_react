@@ -1,0 +1,22 @@
+{
+  "name": "chatApp_react",
+  "version": "1.0.0",
+  "main": "index.js",
+  "type": "module",
+  "author": "barrystone <barrystone3183@gmail.com>",
+  "license": "MIT",
+  "scripts": {
+    "server": "node server/index.js",
+    "server-w": "nodemon server/index.js",
+    "client": "yarn --cwd ./client start",
+    "all": "concurrently \"yarn server\"  \"yarn client\" "
+  },
+  "dependencies": {
+    "dotenv": "^8.2.0",
+    "graphql-yoga": "^1.18.3"
+  },
+  "devDependencies": {
+    "concurrently": "^6.0.0",
+    "nodemon": "^2.0.7"
+  }
+}

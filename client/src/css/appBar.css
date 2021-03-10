@@ -1,0 +1,7 @@
+.appBar {
+  background-color: #575fcf;
+  height: 50px;
+  width: 100vw;
+  position: fixed;
+  top: 0;
+}
