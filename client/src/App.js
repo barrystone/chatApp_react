@@ -3,7 +3,8 @@ import ReactDOM from "react-dom";
 
 // import "bootstrap/dist/css/bootstrap.min.css";
 // import "shards-ui/dist/css/shards.min.css";
-import "./index.css";
+// import "./index.css";
+import "./assets/css/main.css";
 
 import LandingScreen from "./screens/LandingScreen";
 

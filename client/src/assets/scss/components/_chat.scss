@@ -1,0 +1,96 @@
+.chat-wrap {
+  z-index: 1;
+
+  background-color: rgb(250, 250, 250);
+  /* padding: 0 2vw; */
+  width: 86vw;
+  margin: 0 auto;
+  /* border-left: solid 3vw rgb(16, 0, 66); */
+  /* border-right: solid 3vw rgb(16, 0, 66); */
+  position: relative;
+}
+
+.messages-wrap {
+  /* border-left: solid 3vw rgb(118, 252, 129); */
+  /* border-right: solid 3vw rgb(118, 252, 129); */
+  border-left: solid 2vw $color-white;
+  border-right: solid 2vw $color-white;
+}
+
+.message-box {
+  border-left: 1vw solid transparent;
+}
+
+.appName {
+  font-size: 100px;
+  padding: 100px 0;
+}
+
+.error {
+  margin-top: 20vh;
+  padding: 0.1vh 0;
+  text-align: center;
+}
+.error p {
+  font-size: 40px;
+}
+
+.chatBox {
+  border: 1px solid $color-black;
+  border-radius: 30px;
+  padding: 0 14px;
+  margin-left: 15px;
+  background-color: $color-white;
+}
+
+.chatBox-date {
+  /* border: 1px solid $color-black; */
+  /* border-radius: 30px; */
+  /* padding: 0 14px; */
+  float: right;
+  font-size: 10px;
+  margin: 4px 15px 0 0;
+  background-color: $color-white;
+  /* color: aqua; */
+}
+
+.chatBox p {
+  font-size: 18px;
+  display: inline-block;
+  margin: 10px 0;
+  word-break: break-all;
+}
+
+.userName {
+  text-align: center;
+  font-size: 14px;
+  display: block;
+  width: 40px;
+  word-break: break-all;
+  /* background-color: blueviolet; */
+}
+
+.inputBox {
+  position: fixed;
+  bottom: 10px;
+
+  /* margin: 0 1.5%; */
+  width: 88vw;
+  /* transform: translateX(1.8%); */
+}
+
+.textBox {
+  width: 100%;
+  border: 1px $color-black solid;
+  /* border-radius: 10px; */
+  background-color: $color-white;
+}
+.outButton {
+  /* width: 10px; */
+  transform: translateY(-1.5px) translateX(-3px);
+}
+
+.inputButton {
+  width: 100%;
+  transform: translateY(-1.8px) translateX(-3px);
+}

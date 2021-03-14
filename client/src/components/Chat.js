@@ -3,6 +3,7 @@ import { ApolloClient, InMemoryCache, ApolloProvider } from "@apollo/client";
 
 import AppBar from "./AppBar";
 import Messages from "./Messages";
+import PopupWindow from "./PopupWindow";
 
 const client = new ApolloClient({
   uri: "http://localhost:4000/",
@@ -16,6 +17,7 @@ const Chat = ({ user, outChat }) => (
       <div className="chat-wrap">
         <Messages user={user} outChat={() => outChat()} />
       </div>
+      <PopupWindow />
     </>
   </ApolloProvider>
 );

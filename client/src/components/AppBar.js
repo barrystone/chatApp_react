@@ -1,5 +1,5 @@
-import React from "react";
-import "../css/appBar.css";
+import React, { useState } from "react";
+// import "../css/appBar.css";
 
 // import MenuImage{ ReactComponent as Image } from "../images/menu-icon.svg";
 // import MenuImage from "../images/menu-icon.svg";
@@ -8,6 +8,7 @@ import "../css/appBar.css";
 // const UserImage = require("../images/user-icon.svg");
 
 const AppBar = () => {
+  const [showWindow, setShowWindow] = useState(0);
   return (
     <div className="appBar">
       <div className="appBar__menu">
@@ -41,7 +42,7 @@ const AppBar = () => {
         <h1>charApp_react</h1>
       </div>
       <div className="appBar__icons">
-        <div className="appBar__icon-user">
+        <div className="appBar__icons-user">
           {/* <img src="../images/user-icon.svg" alt="" /> */}
           {/* <img src={UserImage} alt="" /> */}
           <div className="appBar__icons-userIcon">
@@ -62,12 +63,22 @@ const AppBar = () => {
           {/* <div className="appBar__icon-user--profile"></div>
           <div className="appBar__icon-user--setting"></div> */}
         </div>
-      </div>
-      <div className="appBar__userBox">
-        <ul>
-          <li>Profile</li>
-          <li>Setting</li>
-        </ul>
+        <div className="appBar__icons-userBox">
+          <ul>
+            <a href="#popupWindow">
+              <li>
+                <span>Profile</span>
+              </li>
+            </a>
+
+            <li>
+              <span onClick={() => settingWindow}>Setting</span>{" "}
+            </li>
+            <li>
+              <span>Null</span>
+            </li>
+          </ul>
+        </div>
       </div>
     </div>
   );

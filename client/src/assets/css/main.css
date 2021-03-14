@@ -1,0 +1,266 @@
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  /* background-color: rgb(0, 0, 0); */
+  background-color: #100042;
+}
+
+.landing-wrap {
+  margin-top: 10vh;
+  height: 80vh;
+  background-color: fafafa;
+}
+
+.appBar {
+  z-index: 2;
+  background-color: #575fcf;
+  height: 50px;
+  width: 100%;
+  position: fixed;
+  top: 0;
+}
+
+.appBar__menu {
+  float: left;
+  height: 100%;
+  width: 50px;
+}
+
+.appBar__title {
+  float: left;
+}
+
+.appBar__title h1 {
+  margin-left: 60px;
+  font-size: 20px;
+  color: #fff;
+}
+
+.appBar__icons {
+  position: absolute;
+  right: 10px;
+}
+
+.appBar__menu-menuIcon {
+  position: relative;
+  top: 10px;
+  left: 10px;
+}
+
+.appBar__icons-user {
+  position: relative;
+  /* float: right; */
+  width: 50px;
+  height: 50px;
+}
+
+.appBar__icons-user:hover ~ .appBar__icons-userBox {
+  display: block;
+}
+
+.appBar__icons-userIcon {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translateX(-50%) translateY(-50%);
+          transform: translateX(-50%) translateY(-50%);
+}
+
+.appBar__icons-userBox {
+  /* visibility: hidden; */
+  width: 140px;
+  height: 120px;
+  background-color: #575fcf;
+  position: absolute;
+  top: 50px;
+  right: 0;
+}
+
+.appBar__icons-userBox :hover {
+  /* visibility: hidden; */
+  display: block;
+}
+
+.appBar__icons-userBox ul {
+  margin: 0;
+  padding: 0;
+}
+
+.appBar__icons-userBox ul li {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  color: #fff;
+  font-size: 18px;
+  height: 35px;
+  border-top: #fff 5px solid;
+  position: relative;
+}
+
+.appBar__icons-userBox ul li span {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translateY(-50%) translateX(-50%);
+          transform: translateY(-50%) translateX(-50%);
+}
+
+.chat-wrap {
+  z-index: 1;
+  background-color: #fafafa;
+  /* padding: 0 2vw; */
+  width: 86vw;
+  margin: 0 auto;
+  /* border-left: solid 3vw rgb(16, 0, 66); */
+  /* border-right: solid 3vw rgb(16, 0, 66); */
+  position: relative;
+}
+
+.messages-wrap {
+  /* border-left: solid 3vw rgb(118, 252, 129); */
+  /* border-right: solid 3vw rgb(118, 252, 129); */
+  border-left: solid 2vw #fff;
+  border-right: solid 2vw #fff;
+}
+
+.message-box {
+  border-left: 1vw solid transparent;
+}
+
+.appName {
+  font-size: 100px;
+  padding: 100px 0;
+}
+
+.error {
+  margin-top: 20vh;
+  padding: 0.1vh 0;
+  text-align: center;
+}
+
+.error p {
+  font-size: 40px;
+}
+
+.chatBox {
+  border: 1px solid #000;
+  border-radius: 30px;
+  padding: 0 14px;
+  margin-left: 15px;
+  background-color: #fff;
+}
+
+.chatBox-date {
+  /* border: 1px solid $color-black; */
+  /* border-radius: 30px; */
+  /* padding: 0 14px; */
+  float: right;
+  font-size: 10px;
+  margin: 4px 15px 0 0;
+  background-color: #fff;
+  /* color: aqua; */
+}
+
+.chatBox p {
+  font-size: 18px;
+  display: inline-block;
+  margin: 10px 0;
+  word-break: break-all;
+}
+
+.userName {
+  text-align: center;
+  font-size: 14px;
+  display: block;
+  width: 40px;
+  word-break: break-all;
+  /* background-color: blueviolet; */
+}
+
+.inputBox {
+  position: fixed;
+  bottom: 10px;
+  /* margin: 0 1.5%; */
+  width: 88vw;
+  /* transform: translateX(1.8%); */
+}
+
+.textBox {
+  width: 100%;
+  border: 1px #000 solid;
+  /* border-radius: 10px; */
+  background-color: #fff;
+}
+
+.outButton {
+  /* width: 10px; */
+  -webkit-transform: translateY(-1.5px) translateX(-3px);
+          transform: translateY(-1.5px) translateX(-3px);
+}
+
+.inputButton {
+  width: 100%;
+  -webkit-transform: translateY(-1.8px) translateX(-3px);
+          transform: translateY(-1.8px) translateX(-3px);
+}
+
+.popupWindow {
+  z-index: 99;
+  visibility: hidden;
+  opacity: 0;
+  position: fixed;
+  top: 0;
+  width: 0;
+  height: 100vh;
+  width: 100%;
+  background-color: rgba(0, 0, 0, 0.3);
+}
+
+.popupWindow-wrap {
+  opacity: 0;
+  position: relative;
+  top: 27.5%;
+  left: 20%;
+  width: 60%;
+  height: 45%;
+  background-color: #fff;
+  border: 2px solid #575fcf;
+  -webkit-box-shadow: 0 2rem 4rem rgba(0, 0, 0, 0.2);
+          box-shadow: 0 2rem 4rem rgba(0, 0, 0, 0.2);
+  border-radius: 3px;
+}
+
+.popupWindow__header {
+  background-color: #a29bfe;
+  height: 45px;
+}
+
+.popupWindow__header ul {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+}
+
+.popupWindow__header ul li {
+  height: 100%;
+  list-style: none;
+  float: left;
+  margin: 0 20px;
+}
+
+.popupWindow__header-close {
+  position: absolute;
+  top: 0;
+  right: 0;
+  padding: 8px 8px 4px 8px;
+  background-color: #fff;
+}
+
+.popupWindow:target {
+  opacity: 1;
+  visibility: visible;
+}
+
+.popupWindow:target .popupWindow-wrap {
+  opacity: 1;
+}
+/*# sourceMappingURL=main.css.map */

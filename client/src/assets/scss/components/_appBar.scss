@@ -1,0 +1,96 @@
+.appBar {
+  z-index: 2;
+
+  background-color: $color-primary;
+  height: 50px;
+  width: 100%;
+  position: fixed;
+  top: 0;
+}
+
+.appBar__menu {
+  float: left;
+  height: 100%;
+  width: 50px;
+}
+
+.appBar__title {
+  float: left;
+}
+
+.appBar__title h1 {
+  margin-left: 60px;
+  font-size: 20px;
+  color: $color-white;
+}
+
+.appBar__icons {
+  position: absolute;
+  right: 10px;
+}
+
+.appBar__menu-menuIcon {
+  position: relative;
+  top: 10px;
+  left: 10px;
+}
+.appBar__icons-user {
+  position: relative;
+  /* float: right; */
+  width: 50px;
+  height: 50px;
+  // background-color: bisque;
+}
+
+.appBar__icons-user:hover ~ .appBar__icons-userBox {
+  display: block;
+}
+
+.appBar__icons-userIcon {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translateX(-50%) translateY(-50%);
+  // background-color: aquamarine;
+}
+
+.appBar__icons-userBox {
+  /* visibility: hidden; */
+
+  // display: none;
+
+  width: 140px;
+  height: 120px;
+  background-color: $color-primary;
+  position: absolute;
+  top: 50px;
+  right: 0;
+}
+
+.appBar__icons-userBox :hover {
+  /* visibility: hidden; */
+  display: block;
+}
+
+.appBar__icons-userBox ul {
+  margin: 0;
+  padding: 0;
+}
+
+.appBar__icons-userBox ul li {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  color: $color-white;
+  font-size: 18px;
+  height: 35px;
+  border-top: $color-white 5px solid;
+  position: relative;
+}
+
+.appBar__icons-userBox ul li span {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translateY(-50%) translateX(-50%);
+}
