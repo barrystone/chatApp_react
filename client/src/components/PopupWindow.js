@@ -1,14 +1,25 @@
-import React from "react";
+import React, { useState } from "react";
 
 const PopupWindow = () => {
+  const [todayColor, setTodayColor] = useState("");
+  const [last7DayColor, setLast7DayColor] = useState("");
+  const [thisMonthColor, setThisMonthColor] = useState("");
+
   return (
     <div id="popupWindow" className="popupWindow">
       <div className="popupWindow-wrap">
         <div className="popupWindow__header">
           <ul>
-            <li>color</li>
-            <li>color</li>
-            <li>color</li>
+            <li>
+              <span> color</span>{" "}
+            </li>
+            <li>
+              <span> color</span>{" "}
+            </li>
+            <li>
+              <span> color</span>{" "}
+            </li>
+            <li></li>
           </ul>
           <a href="#">
             <div className="popupWindow__header-close">
@@ -40,43 +51,49 @@ const PopupWindow = () => {
         </div>
 
         <div className="popupWindow__content">
-          <div className="popupWindow__box">
-            <div className="popupWindow__box-title">Timeline</div>
-            <div className="popupWindow__box-content">
-              <ul>
-                <li>
-                  <span>today</span>
-                  <input type="color" />
-                </li>
-                <li>
-                  <span>last 7 days</span>
-                  <input type="color" />
-                </li>
-                <li>
-                  <span>this month</span>
-                  <input type="color" />
-                </li>
-              </ul>
+          <div className="popupWindow__box-container">
+            <div className="popupWindow__box">
+              <div className="popupWindow__box-title">
+                <span>Timeline</span>{" "}
+              </div>
+              <div className="popupWindow__box-content">
+                <ul>
+                  <li>
+                    <span>Today :</span>
+                    <input type="color" />
+                  </li>
+                  <li>
+                    <span>Last 7 days :</span>
+                    <input type="color" />
+                  </li>
+                  <li>
+                    <span>This month :</span>
+                    <input type="color" />
+                  </li>
+                </ul>
+              </div>
             </div>
-          </div>
 
-          <div className="popupWindow__box">
-            <div className="popupWindow__box-title">Timeline</div>
-            <div className="popupWindow__box-content">
-              <ul>
-                <li>
-                  <span>today</span>
-                  <input type="color" />
-                </li>
-                <li>
-                  <span>last 7 days</span>
-                  <input type="color" />
-                </li>
-                <li>
-                  <span>this month</span>
-                  <input type="color" />
-                </li>
-              </ul>
+            <div className="popupWindow__box">
+              <div className="popupWindow__box-title">
+                <span>Timeline</span>{" "}
+              </div>
+              <div className="popupWindow__box-content">
+                <ul>
+                  <li>
+                    <span>Today :</span>
+                    <input type="color" />
+                  </li>
+                  <li>
+                    <span>Last 7 days :</span>
+                    <input type="color" />
+                  </li>
+                  <li>
+                    <span>This month :</span>
+                    <input type="color" />
+                  </li>
+                </ul>
+              </div>
             </div>
           </div>
         </div>

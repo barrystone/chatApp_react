@@ -3,6 +3,7 @@
 
   visibility: hidden;
   opacity: 0;
+
   position: fixed;
   top: 0;
   width: 0;
@@ -12,7 +13,9 @@
 
   &-wrap {
     // visibility: hidden;
+
     opacity: 0;
+
     position: relative;
     top: 27.5%;
     left: 20%;
@@ -31,13 +34,27 @@
     height: 45px;
     ul {
       margin: 0;
+      margin-left: 10px;
       padding: 0;
       height: 100%;
+      color: $color-white;
       li {
-        height: 100%;
+        height: 120%;
+        width: 50px;
         list-style: none;
         float: left;
         margin: 0 20px;
+        border-left: 10px $color-white solid;
+        position: relative;
+        transform: rotateZ(45deg) translateY(40%);
+
+        span {
+          font-size: 25px;
+          position: absolute;
+          top: 50%;
+          left: 50%;
+          transform: translateX(-40%) translateY(-160%) rotateZ(-45deg);
+        }
       }
     }
 
@@ -47,6 +64,18 @@
       right: 0;
       padding: 8px 8px 4px 8px;
       background-color: $color-white;
+
+      &:hover {
+        svg {
+          g {
+            path {
+              fill: $color-white;
+            }
+          }
+        }
+        background-color: $color-black;
+        border: $color-red solid 1px;
+      }
     }
   }
 
@@ -58,5 +87,82 @@
   &:target &-wrap {
     opacity: 1;
     // transform: translate(-50%, -50%) scale(1);
+  }
+
+  &__content {
+    height: calc(100% - 45px);
+    position: relative;
+    // clear: both;
+  }
+
+  &__box {
+    position: relative;
+    &-container {
+      float: left;
+      //   position: relative;
+      height: 72%;
+      margin-top: 3%;
+      //   top: 10%;
+    }
+
+    // flex: ;
+    float: left;
+    height: 100%;
+    width: 230px;
+    margin-left: 30px;
+    border: $color-grey solid 2px;
+
+    &-title {
+      font-size: 22px;
+      color: $color-white;
+      position: relative;
+      left: 0;
+      top: 0;
+      background-color: $color-grey;
+      height: 35px;
+      width: 130px;
+
+      span {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translateX(-50%) translateY(-50%);
+      }
+    }
+
+    &-content {
+      height: calc(100% - 55px);
+      margin-top: 10px;
+
+      ul {
+        float: left;
+        list-style: none;
+        margin: 0;
+        padding: 0;
+        font-size: 22px;
+
+        li {
+          margin: 5px 0 5px 20px;
+          padding: 0;
+          height: 40px;
+          width: 150px;
+          position: relative;
+
+          span {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+          }
+
+          input {
+            position: absolute;
+            right: 0px;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 20px;
+          }
+        }
+      }
+    }
   }
 }

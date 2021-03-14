@@ -16,11 +16,17 @@
 
 .appBar__title {
   float: left;
+  // width:
+  // position: relative;
 }
 
 .appBar__title h1 {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  margin: 0;
   margin-left: 60px;
-  font-size: 20px;
+  font-size: 22px;
   color: $color-white;
 }
 
@@ -82,10 +88,16 @@
   margin: 0;
   padding: 0;
   color: $color-white;
-  font-size: 18px;
+  font-size: 20px;
   height: 35px;
   border-top: $color-white 5px solid;
   position: relative;
+  &:hover {
+    color: $color-primary;
+    background-color: $color-white;
+    border-left: 1px solid $color-primary;
+    border-right: 1px solid $color-primary;
+  }
 }
 
 .appBar__icons-userBox ul li span {

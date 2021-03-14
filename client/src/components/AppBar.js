@@ -39,7 +39,7 @@ const AppBar = () => {
         </div>
       </div>
       <div className="appBar__title">
-        <h1>charApp_react</h1>
+        <h1>chatApp_react</h1>
       </div>
       <div className="appBar__icons">
         <div className="appBar__icons-user">
@@ -65,15 +65,15 @@ const AppBar = () => {
         </div>
         <div className="appBar__icons-userBox">
           <ul>
+            <li>
+              <span>Profile</span>
+            </li>
+
             <a href="#popupWindow">
               <li>
-                <span>Profile</span>
+                <span>Setting</span>{" "}
               </li>
             </a>
-
-            <li>
-              <span onClick={() => settingWindow}>Setting</span>{" "}
-            </li>
             <li>
               <span>Null</span>
             </li>

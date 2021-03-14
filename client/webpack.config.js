@@ -35,6 +35,16 @@ module.exports = {
           loader: "babel-loader",
         },
       },
+      //custom setting (for font .ttf load)
+      {
+        test: /\.(woff2?|eot|ttf|otf)$/,
+        use: {
+          loader: "url-loader",
+          options: {
+            name: "[name].[ext]?[hash]",
+          },
+        },
+      },
     ],
   },
 
