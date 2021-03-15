@@ -1,9 +1,12 @@
 import React, { useState } from "react";
 
-const PopupWindow = () => {
-  const [todayColor, setTodayColor] = useState("");
-  const [last7DayColor, setLast7DayColor] = useState("");
-  const [thisMonthColor, setThisMonthColor] = useState("");
+const PopupWindow = ({
+  changeColor,
+  timelineColor: { todayColor, last7DayColor, thisMonthColor },
+}) => {
+  const [nTodayColor, setNTodayColor] = useState(todayColor);
+  const [nLast7DayColor, setNLast7DayColor] = useState(last7DayColor);
+  const [nThisMonthColor, setNThisMonthColor] = useState(thisMonthColor);
 
   return (
     <div id="popupWindow" className="popupWindow">
@@ -21,7 +24,7 @@ const PopupWindow = () => {
             </li>
             <li></li>
           </ul>
-          <a href="#">
+          <a href="#chat">
             <div className="popupWindow__header-close">
               <svg
                 width="20"
@@ -60,15 +63,30 @@ const PopupWindow = () => {
                 <ul>
                   <li>
                     <span>Today :</span>
-                    <input type="color" />
+                    <input
+                      type="color"
+                      name="tdayColor"
+                      value={nTodayColor}
+                      onChange={(e) => setNTodayColor(e.target.value)}
+                    />
                   </li>
                   <li>
                     <span>Last 7 days :</span>
-                    <input type="color" />
+                    <input
+                      type="color"
+                      name="nLast7DayColor"
+                      value={nLast7DayColor}
+                      onChange={(e) => setNLast7DayColor(e.target.value)}
+                    />
                   </li>
                   <li>
                     <span>This month :</span>
-                    <input type="color" />
+                    <input
+                      type="color"
+                      name="nThisMonthColor"
+                      value={nThisMonthColor}
+                      onChange={(e) => setNThisMonthColor(e.target.value)}
+                    />
                   </li>
                 </ul>
               </div>
@@ -95,6 +113,16 @@ const PopupWindow = () => {
                 </ul>
               </div>
             </div>
+
+            <a href="#chat">
+              <button
+                onClick={() =>
+                  changeColor({ nTodayColor, nLast7DayColor, nThisMonthColor })
+                }
+              >
+                save
+              </button>
+            </a>
           </div>
         </div>
       </div>

@@ -24,7 +24,7 @@ const inputBox = ({ user, outChat }) => {
   return (
     <div className="inputBox">
       <Grid container direction="row">
-        <Grid item xs={0}>
+        <Grid item>
           <Button
             className="outButton"
             variant="outlined"

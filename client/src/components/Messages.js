@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState, component } from "react";
 import { useQuery, gql } from "@apollo/client";
 import Identicon from "react-identicons";
 import { Grid } from "@material-ui/core";
@@ -21,7 +21,11 @@ const GET_MESSAGES = gql`
   }
 `;
 
-const Messages = ({ user, outChat }) => {
+const Messages = ({
+  user,
+  outChat,
+  timelineColor: { todayColor, last7DayColor, thisMonthColor },
+}) => {
   const { data } = useQuery(GET_MESSAGES, {
     pollInterval: 500,
   });
@@ -31,8 +35,8 @@ const Messages = ({ user, outChat }) => {
       0,
       document.body.scrollHeight || document.documentElement.scrollHeight
     );
-    console.log("data: ", data);
   }, [data]);
+
   return (
     <>
       {!data ? (
@@ -51,15 +55,15 @@ const Messages = ({ user, outChat }) => {
                   date: { year, mounth, tday, time },
                 }) => {
                   const dateNow = new Date();
-                  let tdayColor =
+                  let ShowTimelineColor =
                     year == dateNow.getFullYear()
                       ? mounth + "/" + tday ==
                         dateNow.getMonth() + 1 + "/" + dateNow.getDate()
-                        ? "#05c46b"
+                        ? todayColor
                         : tday >= dateNow.getDate() - 7
-                        ? "#ffd32a"
+                        ? last7DayColor
                         : mounth == dateNow.getMonth() + 1
-                      : "black";
+                      : thisMonthColor;
 
                   return (
                     <Grid
@@ -71,7 +75,7 @@ const Messages = ({ user, outChat }) => {
                         user === messageUser ? "flex-end" : "flex-start"
                       }
                       spacing={3}
-                      style={{ borderColor: tdayColor }}
+                      style={{ borderColor: ShowTimelineColor }}
                     >
                       <Grid item>
                         <Grid container direction="row">
@@ -97,8 +101,9 @@ const Messages = ({ user, outChat }) => {
                 }
               )}
               <br /> <br />
-              <br /> <br />
+              <br />
               <Grid />
+              <div id="latest"></div>
             </Grid>
             <InputBox user={user} outChat={() => outChat()} />
           </div>

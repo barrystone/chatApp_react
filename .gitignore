@@ -1,5 +1,7 @@
 todo.txt
 client/src/logrocket.js
+.env
+client/.env
 
 # Logs
 logs
