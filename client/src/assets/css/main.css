@@ -20,7 +20,8 @@ body {
   background-color: #575fcf;
   height: 50px;
   width: 100%;
-  position: fixed;
+  position: -webkit-sticky;
+  position: sticky;
   top: 0;
 }
 
