@@ -5,8 +5,18 @@ import AppBar from './AppBar';
 import Messages from './Messages';
 import PopupWindow from './PopupWindow';
 
+import { WebSocketLink } from '@apollo/client/link/ws';
+
+const wsLink = new WebSocketLink({
+  uri: 'ws://localhost:4000/',
+  options: {
+    reconnect: true
+  }
+});
+
 //Conecting to apallo server
 const client = new ApolloClient({
+  link: wsLink,
   uri: 'http://localhost:4000/',
   // uri: process.env.SERVER_URL,
   cache: new InMemoryCache()

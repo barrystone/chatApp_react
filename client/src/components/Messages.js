@@ -1,12 +1,12 @@
-import React, { useEffect, useState, component } from "react";
-import { useQuery, gql } from "@apollo/client";
-import Identicon from "react-identicons";
-import { Grid } from "@material-ui/core";
+import React, { useEffect } from 'react';
+import { useSubscription, gql } from '@apollo/client';
+import Identicon from 'react-identicons';
+import { Grid } from '@material-ui/core';
 
-import InputBox from "./inputBox";
+import InputBox from './inputBox';
 
 const GET_MESSAGES = gql`
-  query {
+  subscription {
     messages {
       id
       content
@@ -24,11 +24,9 @@ const GET_MESSAGES = gql`
 const Messages = ({
   user,
   outChat,
-  timelineColor: { todayColor, last7DayColor, thisMonthColor },
+  timelineColor: { todayColor, last7DayColor, thisMonthColor }
 }) => {
-  const { data } = useQuery(GET_MESSAGES, {
-    pollInterval: 500,
-  });
+  const { data } = useSubscription(GET_MESSAGES);
 
   useEffect(() => {
     window.scrollTo(
@@ -52,13 +50,13 @@ const Messages = ({
                   id,
                   user: messageUser,
                   content,
-                  date: { year, mounth, tday, time },
+                  date: { year, mounth, tday, time }
                 }) => {
                   const dateNow = new Date();
                   let ShowTimelineColor =
                     year == dateNow.getFullYear()
-                      ? mounth + "/" + tday ==
-                        dateNow.getMonth() + 1 + "/" + dateNow.getDate()
+                      ? mounth + '/' + tday ==
+                        dateNow.getMonth() + 1 + '/' + dateNow.getDate()
                         ? todayColor
                         : tday >= dateNow.getDate() - 7
                         ? last7DayColor
@@ -72,7 +70,7 @@ const Messages = ({
                       container
                       direction="column"
                       alignItems={
-                        user === messageUser ? "flex-end" : "flex-start"
+                        user === messageUser ? 'flex-end' : 'flex-start'
                       }
                       spacing={3}
                       style={{ borderColor: ShowTimelineColor }}
@@ -87,7 +85,7 @@ const Messages = ({
                             <div
                               className="chatBox"
                               style={{
-                                maxWidth: screen.width * 0.7,
+                                maxWidth: screen.width * 0.7
                               }}
                             >
                               <p>{content}</p>
