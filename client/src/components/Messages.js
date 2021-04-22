@@ -3,8 +3,6 @@ import { useSubscription, gql } from '@apollo/client';
 import Identicon from 'react-identicons';
 import { Grid } from '@material-ui/core';
 
-import InputBox from './inputBox';
-
 const GET_MESSAGES = gql`
   subscription {
     messages {
@@ -29,10 +27,12 @@ const Messages = ({
   const { data } = useSubscription(GET_MESSAGES);
 
   useEffect(() => {
-    window.scrollTo(
-      0,
-      document.body.scrollHeight || document.documentElement.scrollHeight
-    );
+    document.getElementById('latest').scrollIntoView();
+    // window.scrollTo(
+    //   0,
+    //   document.body.scrollHeight || document.documentElement.scrollHeight
+    //   // document.getElementById('chat').scrollHeight
+    // );
   }, [data]);
 
   return (
@@ -98,12 +98,10 @@ const Messages = ({
                   );
                 }
               )}
-              <br /> <br />
               <br />
               <Grid />
-              <div id="latest"></div>
+              {/* <div id="latest"></div> */}
             </Grid>
-            <InputBox user={user} outChat={() => outChat()} />
           </div>
         </>
       )}

@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState } from 'react';
 // import "../css/appBar.css";
 
 // import MenuImage{ ReactComponent as Image } from "../images/menu-icon.svg";
@@ -9,6 +9,17 @@ import React, { useState } from "react";
 
 const AppBar = () => {
   const [showWindow, setShowWindow] = useState(0);
+
+  const showUserBox = (e) => {
+    const userBox = document.getElementsByClassName('appBar__icons-userBox')[0];
+    userBox.style.visibility = 'visible';
+  };
+
+  const hideUserBox = () => {
+    const userBox = document.getElementsByClassName('appBar__icons-userBox')[0];
+    userBox.style.visibility = 'hidden';
+  };
+
   return (
     <div className="appBar">
       <div className="appBar__menu">
@@ -42,7 +53,11 @@ const AppBar = () => {
         <h1>chatApp_react</h1>
       </div>
       <div className="appBar__icons">
-        <div className="appBar__icons-user">
+        <div
+          className="appBar__icons-user"
+          onMouseOver={() => showUserBox()}
+          onMouseLeave={() => hideUserBox()}
+        >
           {/* <img src="../images/user-icon.svg" alt="" /> */}
           {/* <img src={UserImage} alt="" /> */}
           <div className="appBar__icons-userIcon">
@@ -63,7 +78,11 @@ const AppBar = () => {
           {/* <div className="appBar__icon-user--profile"></div>
           <div className="appBar__icon-user--setting"></div> */}
         </div>
-        <div className="appBar__icons-userBox">
+        <div
+          className="appBar__icons-userBox"
+          onMouseOver={() => showUserBox()}
+          onMouseLeave={() => hideUserBox()}
+        >
           <ul>
             <li>
               <span>Profile</span>
@@ -71,7 +90,7 @@ const AppBar = () => {
 
             <a href="#popupWindow">
               <li>
-                <span>Setting</span>{" "}
+                <span>Setting</span>{' '}
               </li>
             </a>
             <li>

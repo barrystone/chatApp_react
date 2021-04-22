@@ -1,8 +1,9 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { ApolloClient, InMemoryCache, ApolloProvider } from '@apollo/client';
 
 import AppBar from './AppBar';
 import Messages from './Messages';
+import InputBox from './inputBox';
 import PopupWindow from './PopupWindow';
 
 import { WebSocketLink } from '@apollo/client/link/ws';
@@ -23,9 +24,14 @@ const client = new ApolloClient({
 });
 
 const Chat = ({ user, outChat }) => {
-  const localTimelineColor = localStorage
-    .getItem('chatApp_react__chat-timelineColor')
-    .split(',');
+  // const localTimelineColor = localStorage
+  //   .getItem('chatApp_react__chat-timelineColor')
+  //   .split(',');
+  const localTimelineColor = localStorage.getItem(
+    'chatApp_react__chat-timelineColor'
+  )
+    ? localStorage.getItem('chatApp_react__chat-timelineColor').split(',')
+    : [];
 
   const [timelineColor, setTimelineColor] = useState({
     todayColor:
@@ -51,20 +57,22 @@ const Chat = ({ user, outChat }) => {
 
   return (
     <ApolloProvider client={client}>
-      <>
-        <AppBar />
-        <div className="chat-wrap">
+      <AppBar />
+      <div className="chat-wrap-container" id="chat">
+        <div className="chat-wrap" id="chat-messages">
           <Messages
             user={user}
-            outChat={() => outChat()}
+            // outChat={() => outChat()}
             timelineColor={timelineColor}
           />
+          <div id="latest"></div>
         </div>
-        <PopupWindow
-          changeColor={(e) => changeColor(e)}
-          timelineColor={timelineColor}
-        />
-      </>
+        <InputBox user={user} outChat={() => outChat()} />
+      </div>
+      <PopupWindow
+        changeColor={(e) => changeColor(e)}
+        timelineColor={timelineColor}
+      />
     </ApolloProvider>
   );
 };

@@ -1,12 +1,19 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from 'react';
 
 const PopupWindow = ({
   changeColor,
-  timelineColor: { todayColor, last7DayColor, thisMonthColor },
+  timelineColor: { todayColor, last7DayColor, thisMonthColor }
 }) => {
   const [nTodayColor, setNTodayColor] = useState(todayColor);
   const [nLast7DayColor, setNLast7DayColor] = useState(last7DayColor);
   const [nThisMonthColor, setNThisMonthColor] = useState(thisMonthColor);
+
+  useEffect(() => {
+    // document.body.style.overflowY = 'hidden';
+    // document.getElementById('popupWindow').style.overflowY = 'hidden';
+    // document.getElementById('popupWindow').style.background = '#000';
+    // document.getElementsByClassName("chat-wrap").style
+  }, []);
 
   return (
     <div id="popupWindow" className="popupWindow">
@@ -14,18 +21,21 @@ const PopupWindow = ({
         <div className="popupWindow__header">
           <ul>
             <li>
-              <span> color</span>{" "}
+              <span> color</span>{' '}
             </li>
             <li>
-              <span> color</span>{" "}
+              <span> color</span>{' '}
             </li>
             <li>
-              <span> color</span>{" "}
+              <span> color</span>{' '}
             </li>
             <li></li>
           </ul>
           <a href="#chat">
-            <div className="popupWindow__header-close">
+            <div
+              className="popupWindow__header-close"
+              onClick={() => (document.body.style.overflowY = 'scroll')}
+            >
               <svg
                 width="20"
                 height="20"
@@ -57,7 +67,7 @@ const PopupWindow = ({
           <div className="popupWindow__box-container">
             <div className="popupWindow__box">
               <div className="popupWindow__box-title">
-                <span>Timeline</span>{" "}
+                <span>Timeline</span>{' '}
               </div>
               <div className="popupWindow__box-content">
                 <ul>
@@ -92,9 +102,9 @@ const PopupWindow = ({
               </div>
             </div>
 
-            <div className="popupWindow__box">
+            {/* <div className="popupWindow__box">
               <div className="popupWindow__box-title">
-                <span>Timeline</span>{" "}
+                <span>Timeline</span>{' '}
               </div>
               <div className="popupWindow__box-content">
                 <ul>
@@ -112,18 +122,18 @@ const PopupWindow = ({
                   </li>
                 </ul>
               </div>
-            </div>
-
-            <a href="#chat">
-              <button
-                onClick={() =>
-                  changeColor({ nTodayColor, nLast7DayColor, nThisMonthColor })
-                }
-              >
-                save
-              </button>
-            </a>
+            </div> */}
           </div>
+          <a href="#chat">
+            <a
+              className="popupWindow-save"
+              onClick={() =>
+                changeColor({ nTodayColor, nLast7DayColor, nThisMonthColor })
+              }
+            >
+              save
+            </a>
+          </a>
         </div>
       </div>
     </div>

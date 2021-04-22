@@ -1,16 +1,17 @@
-import React from "react";
-import ReactDOM from "react-dom";
+import React from 'react';
+import ReactDOM from 'react-dom';
 
-// import "bootstrap/dist/css/bootstrap.min.css";
-// import "shards-ui/dist/css/shards.min.css";
-// import "./index.css";
-import "./assets/css/main.css";
+// import "./assets/css/main.css";
 
-import LandingScreen from "./screens/LandingScreen";
+import LandingScreen from './screens/LandingScreen';
 
 // Custom debugging setting, if show error just comment it (in .gitignore).
-import "./logrocket";
+import './logrocket';
 
-const App = () => <LandingScreen />;
+const App = () => {
+  document.body.style.backgroundColor = '#100042';
+  document.body.style.margin = 0;
+  return <LandingScreen />;
+};
 
-ReactDOM.render(<App />, document.getElementById("app"));
+ReactDOM.render(<App />, document.getElementById('app'));
