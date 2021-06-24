@@ -25,7 +25,11 @@ const LandingPage = () => {
 
   return !inChat ? (
     <div className="landing-wrap">
-      <div className="appName">chatApp_react</div>
+      <div className="appName" style={{ fontSize: '55px' }}>
+        學生作業討論區
+        <br />
+        <span style={{ fontSize: '50px' }}>聊天室</span>
+      </div>
       <TextField
         className="landing__user"
         id="outlined-secondary"

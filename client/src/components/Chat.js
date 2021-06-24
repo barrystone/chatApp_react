@@ -9,7 +9,7 @@ import PopupWindow from './PopupWindow';
 import { WebSocketLink } from '@apollo/client/link/ws';
 
 const wsLink = new WebSocketLink({
-  uri: 'ws://localhost:4000/',
+  uri: 'ws://localhost:8000/',
   options: {
     reconnect: true
   }
@@ -39,7 +39,7 @@ const Chat = ({ user, outChat }) => {
     last7DayColor:
       localTimelineColor[1] == null ? '#ffd32a' : localTimelineColor[1],
     thisMonthColor:
-      localTimelineColor[2] == null ? '#000000' : localTimelineColor[2]
+      localTimelineColor[2] == null ? '#fdcb6e' : localTimelineColor[2]
   });
 
   const changeColor = (e) => {

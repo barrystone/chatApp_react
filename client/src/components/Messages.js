@@ -61,7 +61,9 @@ const Messages = ({
                         : tday >= dateNow.getDate() - 7
                         ? last7DayColor
                         : mounth == dateNow.getMonth() + 1
-                      : thisMonthColor;
+                        ? thisMonthColor
+                        : 'black'
+                      : 'black';
 
                   return (
                     <Grid
